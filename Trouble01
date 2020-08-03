@@ -1,0 +1,201 @@
+doronuma@tomohikonoiMac docker-files % ls
+Dockerfile		app			docker-compose.yml	tmp
+Gemfile			bin			lib			vendor
+Gemfile.lock		config			log
+README.md		config.ru		public
+Rakefile		db			test
+doronuma@tomohikonoiMac docker-files % docker-compose logs
+Attaching to docker-files_web_1, docker-files_db_1
+web_1  | /usr/local/bundle/gems/mini_racer-0.3.1/lib/mini_racer.rb:2:in `require': /usr/local/bundle/gems/mini_racer-0.3.1/lib/mini_racer_extension.so: undefined symbol: _ZTTNSt7__cxx1119basic_istringstreamIcSt11char_traitsIcESaIcEEE - /usr/local/bundle/gems/mini_racer-0.3.1/lib/mini_racer_extension.so (LoadError)
+web_1  | 	from /usr/local/bundle/gems/mini_racer-0.3.1/lib/mini_racer.rb:2:in `<top (required)>'
+web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:81:in `require'
+web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:81:in `block (2 levels) in require'
+web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:76:in `each'
+web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:76:in `block in require'
+web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:65:in `each'
+web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:65:in `require'
+web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler.rb:114:in `require'
+web_1  | 	from /app/config/application.rb:7:in `<top (required)>'
+web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:88:in `require'
+web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:88:in `block in server'
+web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:85:in `tap'
+web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:85:in `server'
+db_1   | 2020-08-02 02:51:16+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.31-1debian10 started.
+db_1   | 2020-08-02 02:51:16+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+db_1   | 2020-08-02 02:51:16+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.31-1debian10 started.
+db_1   | 2020-08-02T02:51:16.816143Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+db_1   | 2020-08-02T02:51:16.817241Z 0 [Note] mysqld (mysqld 5.7.31) starting as process 1 ...
+db_1   | 2020-08-02T02:51:16.819285Z 0 [Note] InnoDB: PUNCH HOLE support available
+db_1   | 2020-08-02T02:51:16.819347Z 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+db_1   | 2020-08-02T02:51:16.819361Z 0 [Note] InnoDB: Uses event mutexes
+db_1   | 2020-08-02T02:51:16.819369Z 0 [Note] InnoDB: GCC builtin __atomic_thread_fence() is used for memory barrier
+db_1   | 2020-08-02T02:51:16.819377Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+db_1   | 2020-08-02T02:51:16.819385Z 0 [Note] InnoDB: Using Linux native AIO
+db_1   | 2020-08-02T02:51:16.819563Z 0 [Note] InnoDB: Number of pools: 1
+db_1   | 2020-08-02T02:51:16.819769Z 0 [Note] InnoDB: Using CPU crc32 instructions
+db_1   | 2020-08-02T02:51:16.820919Z 0 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+db_1   | 2020-08-02T02:51:16.825954Z 0 [Note] InnoDB: Completed initialization of buffer pool
+db_1   | 2020-08-02T02:51:16.827596Z 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+db_1   | 2020-08-02T02:51:16.838807Z 0 [Note] InnoDB: Highest supported file format is Barracuda.
+db_1   | 2020-08-02T02:51:16.845254Z 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+db_1   | 2020-08-02T02:51:16.845411Z 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+db_1   | 2020-08-02T02:51:16.859622Z 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+db_1   | 2020-08-02T02:51:16.860179Z 0 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
+db_1   | 2020-08-02T02:51:16.860230Z 0 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
+db_1   | 2020-08-02T02:51:16.860461Z 0 [Note] InnoDB: Waiting for purge to start
+db_1   | 2020-08-02T02:51:16.910784Z 0 [Note] InnoDB: 5.7.31 started; log sequence number 12578398
+db_1   | 2020-08-02T02:51:16.911103Z 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+db_1   | 2020-08-02T02:51:16.911511Z 0 [Note] Plugin 'FEDERATED' is disabled.
+db_1   | 2020-08-02T02:51:16.912282Z 0 [Note] InnoDB: Buffer pool(s) load completed at 200802  2:51:16
+db_1   | 2020-08-02T02:51:16.915289Z 0 [Note] Found ca.pem, server-cert.pem and server-key.pem in data directory. Trying to enable SSL support using them.
+db_1   | 2020-08-02T02:51:16.915406Z 0 [Note] Skipping generation of SSL certificates as certificate files are present in data directory.
+db_1   | 2020-08-02T02:51:16.915814Z 0 [Warning] CA certificate ca.pem is self signed.
+db_1   | 2020-08-02T02:51:16.915917Z 0 [Note] Skipping generation of RSA key pair as key files are present in data directory.
+db_1   | 2020-08-02T02:51:16.916285Z 0 [Note] Server hostname (bind-address): '*'; port: 3306
+db_1   | 2020-08-02T02:51:16.916390Z 0 [Note] IPv6 is available.
+db_1   | 2020-08-02T02:51:16.916457Z 0 [Note]   - '::' resolves to '::';
+db_1   | 2020-08-02T02:51:16.916535Z 0 [Note] Server socket created on IP: '::'.
+db_1   | 2020-08-02T02:51:16.918880Z 0 [Warning] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+db_1   | 2020-08-02T02:51:16.925011Z 0 [Note] Event Scheduler: Loaded 0 events
+db_1   | 2020-08-02T02:51:16.925242Z 0 [Note] mysqld: ready for connections.
+db_1   | Version: '5.7.31'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server (GPL)
+db_1   | 2020-08-02T03:17:47.355383Z 0 [Note] Giving 0 client threads a chance to die gracefully
+db_1   | 2020-08-02T03:17:47.355399Z 0 [Note] Shutting down slave threads
+db_1   | 2020-08-02T03:17:47.355402Z 0 [Note] Forcefully disconnecting 0 remaining clients
+db_1   | 2020-08-02T03:17:47.355405Z 0 [Note] Event Scheduler: Purging the queue. 0 events
+db_1   | 2020-08-02T03:17:47.355433Z 0 [Note] Binlog end
+db_1   | 2020-08-02T03:17:47.355679Z 0 [Note] Shutting down plugin 'ngram'
+db_1   | 2020-08-02T03:17:47.355683Z 0 [Note] Shutting down plugin 'partition'
+db_1   | 2020-08-02T03:17:47.355685Z 0 [Note] Shutting down plugin 'BLACKHOLE'
+db_1   | 2020-08-02T03:17:47.355687Z 0 [Note] Shutting down plugin 'ARCHIVE'
+db_1   | 2020-08-02T03:17:47.355688Z 0 [Note] Shutting down plugin 'PERFORMANCE_SCHEMA'
+db_1   | 2020-08-02T03:17:47.355702Z 0 [Note] Shutting down plugin 'MRG_MYISAM'
+db_1   | 2020-08-02T03:17:47.355704Z 0 [Note] Shutting down plugin 'MyISAM'
+db_1   | 2020-08-02T03:17:47.355708Z 0 [Note] Shutting down plugin 'INNODB_SYS_VIRTUAL'
+db_1   | 2020-08-02T03:17:47.355710Z 0 [Note] Shutting down plugin 'INNODB_SYS_DATAFILES'
+db_1   | 2020-08-02T03:17:47.355711Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLESPACES'
+db_1   | 2020-08-02T03:17:47.355713Z 0 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN_COLS'
+db_1   | 2020-08-02T03:17:47.355714Z 0 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN'
+db_1   | 2020-08-02T03:17:47.355715Z 0 [Note] Shutting down plugin 'INNODB_SYS_FIELDS'
+db_1   | 2020-08-02T03:17:47.355716Z 0 [Note] Shutting down plugin 'INNODB_SYS_COLUMNS'
+db_1   | 2020-08-02T03:17:47.355717Z 0 [Note] Shutting down plugin 'INNODB_SYS_INDEXES'
+db_1   | 2020-08-02T03:17:47.355719Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLESTATS'
+db_1   | 2020-08-02T03:17:47.355720Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLES'
+db_1   | 2020-08-02T03:17:47.355721Z 0 [Note] Shutting down plugin 'INNODB_FT_INDEX_TABLE'
+db_1   | 2020-08-02T03:17:47.355722Z 0 [Note] Shutting down plugin 'INNODB_FT_INDEX_CACHE'
+db_1   | 2020-08-02T03:17:47.355724Z 0 [Note] Shutting down plugin 'INNODB_FT_CONFIG'
+db_1   | 2020-08-02T03:17:47.355725Z 0 [Note] Shutting down plugin 'INNODB_FT_BEING_DELETED'
+db_1   | 2020-08-02T03:17:47.355726Z 0 [Note] Shutting down plugin 'INNODB_FT_DELETED'
+db_1   | 2020-08-02T03:17:47.355727Z 0 [Note] Shutting down plugin 'INNODB_FT_DEFAULT_STOPWORD'
+db_1   | 2020-08-02T03:17:47.355729Z 0 [Note] Shutting down plugin 'INNODB_METRICS'
+db_1   | 2020-08-02T03:17:47.355730Z 0 [Note] Shutting down plugin 'INNODB_TEMP_TABLE_INFO'
+db_1   | 2020-08-02T03:17:47.355731Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_POOL_STATS'
+db_1   | 2020-08-02T03:17:47.355732Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE_LRU'
+db_1   | 2020-08-02T03:17:47.355733Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE'
+db_1   | 2020-08-02T03:17:47.355735Z 0 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX_RESET'
+db_1   | 2020-08-02T03:17:47.355736Z 0 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX'
+db_1   | 2020-08-02T03:17:47.355737Z 0 [Note] Shutting down plugin 'INNODB_CMPMEM_RESET'
+db_1   | 2020-08-02T03:17:47.355738Z 0 [Note] Shutting down plugin 'INNODB_CMPMEM'
+db_1   | 2020-08-02T03:17:47.355739Z 0 [Note] Shutting down plugin 'INNODB_CMP_RESET'
+db_1   | 2020-08-02T03:17:47.355741Z 0 [Note] Shutting down plugin 'INNODB_CMP'
+db_1   | 2020-08-02T03:17:47.355742Z 0 [Note] Shutting down plugin 'INNODB_LOCK_WAITS'
+db_1   | 2020-08-02T03:17:47.355743Z 0 [Note] Shutting down plugin 'INNODB_LOCKS'
+db_1   | 2020-08-02T03:17:47.355744Z 0 [Note] Shutting down plugin 'INNODB_TRX'
+db_1   | 2020-08-02T03:17:47.355746Z 0 [Note] Shutting down plugin 'InnoDB'
+db_1   | 2020-08-02T03:17:47.355792Z 0 [Note] InnoDB: FTS optimize thread exiting.
+db_1   | 2020-08-02T03:17:47.355901Z 0 [Note] InnoDB: Starting shutdown...
+db_1   | 2020-08-02T03:17:47.461301Z 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
+db_1   | 2020-08-02T03:17:47.461706Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 200802  3:17:47
+db_1   | 2020-08-02T03:17:48.492523Z 0 [Note] InnoDB: Shutdown completed; log sequence number 12578426
+db_1   | 2020-08-02T03:17:48.494589Z 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+db_1   | 2020-08-02T03:17:48.494749Z 0 [Note] Shutting down plugin 'MEMORY'
+db_1   | 2020-08-02T03:17:48.494852Z 0 [Note] Shutting down plugin 'CSV'
+db_1   | 2020-08-02T03:17:48.494968Z 0 [Note] Shutting down plugin 'sha256_password'
+db_1   | 2020-08-02T03:17:48.495094Z 0 [Note] Shutting down plugin 'mysql_native_password'
+db_1   | 2020-08-02T03:17:48.495291Z 0 [Note] Shutting down plugin 'binlog'
+db_1   | 2020-08-02T03:17:48.497202Z 0 [Note] mysqld: Shutdown complete
+db_1   | 
+db_1   | 2020-08-02 23:58:35+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.31-1debian10 started.
+db_1   | 2020-08-02 23:58:35+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+db_1   | 2020-08-02 23:58:35+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.31-1debian10 started.
+db_1   | 2020-08-02T23:58:35.471781Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+db_1   | 2020-08-02T23:58:35.472886Z 0 [Note] mysqld (mysqld 5.7.31) starting as process 1 ...
+db_1   | 2020-08-02T23:58:35.475116Z 0 [Note] InnoDB: PUNCH HOLE support available
+db_1   | 2020-08-02T23:58:35.475145Z 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+db_1   | 2020-08-02T23:58:35.475149Z 0 [Note] InnoDB: Uses event mutexes
+db_1   | 2020-08-02T23:58:35.475152Z 0 [Note] InnoDB: GCC builtin __atomic_thread_fence() is used for memory barrier
+db_1   | 2020-08-02T23:58:35.475153Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+db_1   | 2020-08-02T23:58:35.475155Z 0 [Note] InnoDB: Using Linux native AIO
+db_1   | 2020-08-02T23:58:35.475627Z 0 [Note] InnoDB: Number of pools: 1
+db_1   | 2020-08-02T23:58:35.476728Z 0 [Note] InnoDB: Using CPU crc32 instructions
+db_1   | 2020-08-02T23:58:35.477797Z 0 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+db_1   | 2020-08-02T23:58:35.483928Z 0 [Note] InnoDB: Completed initialization of buffer pool
+db_1   | 2020-08-02T23:58:35.485398Z 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+db_1   | 2020-08-02T23:58:35.499429Z 0 [Note] InnoDB: Highest supported file format is Barracuda.
+db_1   | 2020-08-02T23:58:35.512526Z 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+db_1   | 2020-08-02T23:58:35.512601Z 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+db_1   | 2020-08-02T23:58:35.528291Z 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+db_1   | 2020-08-02T23:58:35.528745Z 0 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
+db_1   | 2020-08-02T23:58:35.528765Z 0 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
+db_1   | 2020-08-02T23:58:35.529056Z 0 [Note] InnoDB: Waiting for purge to start
+web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:49:in `run_command!'
+db_1   | 2020-08-02T23:58:35.579253Z 0 [Note] InnoDB: 5.7.31 started; log sequence number 12578426
+web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands.rb:18:in `<top (required)>'
+db_1   | 2020-08-02T23:58:35.579379Z 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+web_1  | 	from /app/bin/rails:9:in `require'
+db_1   | 2020-08-02T23:58:35.579819Z 0 [Note] Plugin 'FEDERATED' is disabled.
+web_1  | 	from /app/bin/rails:9:in `<top (required)>'
+db_1   | 2020-08-02T23:58:35.599357Z 0 [Note] Found ca.pem, server-cert.pem and server-key.pem in data directory. Trying to enable SSL support using them.
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client/rails.rb:28:in `load'
+db_1   | 2020-08-02T23:58:35.599384Z 0 [Note] Skipping generation of SSL certificates as certificate files are present in data directory.
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client/rails.rb:28:in `call'
+db_1   | 2020-08-02T23:58:35.600917Z 0 [Note] InnoDB: Buffer pool(s) load completed at 200802 23:58:35
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client/command.rb:7:in `call'
+db_1   | 2020-08-02T23:58:35.601196Z 0 [Warning] CA certificate ca.pem is self signed.
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client.rb:30:in `run'
+db_1   | 2020-08-02T23:58:35.601496Z 0 [Note] Skipping generation of RSA key pair as key files are present in data directory.
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/bin/spring:49:in `<top (required)>'
+db_1   | 2020-08-02T23:58:35.602441Z 0 [Note] Server hostname (bind-address): '*'; port: 3306
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/binstub.rb:31:in `load'
+db_1   | 2020-08-02T23:58:35.602496Z 0 [Note] IPv6 is available.
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/binstub.rb:31:in `<top (required)>'
+db_1   | 2020-08-02T23:58:35.602519Z 0 [Note]   - '::' resolves to '::';
+web_1  | 	from /app/bin/spring:15:in `require'
+db_1   | 2020-08-02T23:58:35.602532Z 0 [Note] Server socket created on IP: '::'.
+web_1  | 	from /app/bin/spring:15:in `<top (required)>'
+db_1   | 2020-08-02T23:58:35.603268Z 0 [Warning] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+web_1  | 	from bin/rails:3:in `load'
+db_1   | 2020-08-02T23:58:35.627805Z 0 [Note] Event Scheduler: Loaded 0 events
+web_1  | 	from bin/rails:3:in `<main>'
+db_1   | 2020-08-02T23:58:35.628060Z 0 [Note] mysqld: ready for connections.
+web_1  | /usr/local/bundle/gems/mini_racer-0.3.1/lib/mini_racer.rb:2:in `require': /usr/local/bundle/gems/mini_racer-0.3.1/lib/mini_racer_extension.so: undefined symbol: _ZTTNSt7__cxx1119basic_istringstreamIcSt11char_traitsIcESaIcEEE - /usr/local/bundle/gems/mini_racer-0.3.1/lib/mini_racer_extension.so (LoadError)
+db_1   | Version: '5.7.31'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server (GPL)
+web_1  | 	from /usr/local/bundle/gems/mini_racer-0.3.1/lib/mini_racer.rb:2:in `<top (required)>'
+web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:81:in `require'
+web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:81:in `block (2 levels) in require'
+web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:76:in `each'
+web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:76:in `block in require'
+web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:65:in `each'
+web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:65:in `require'
+web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler.rb:114:in `require'
+web_1  | 	from /app/config/application.rb:7:in `<top (required)>'
+web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:88:in `require'
+web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:88:in `block in server'
+web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:85:in `tap'
+web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:85:in `server'
+web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:49:in `run_command!'
+web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands.rb:18:in `<top (required)>'
+web_1  | 	from /app/bin/rails:9:in `require'
+web_1  | 	from /app/bin/rails:9:in `<top (required)>'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client/rails.rb:28:in `load'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client/rails.rb:28:in `call'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client/command.rb:7:in `call'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client.rb:30:in `run'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/bin/spring:49:in `<top (required)>'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/binstub.rb:31:in `load'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/binstub.rb:31:in `<top (required)>'
+web_1  | 	from /app/bin/spring:15:in `require'
+web_1  | 	from /app/bin/spring:15:in `<top (required)>'
+web_1  | 	from bin/rails:3:in `load'
+web_1  | 	from bin/rails:3:in `<main>'
+doronuma@tomohikonoiMac docker-files % 
