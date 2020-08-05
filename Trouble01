@@ -1,25 +1,21 @@
-doronuma@tomohikonoiMac docker-files % ls
-Dockerfile		app			docker-compose.yml	tmp
-Gemfile			bin			lib			vendor
-Gemfile.lock		config			log
-README.md		config.ru		public
-Rakefile		db			test
 doronuma@tomohikonoiMac docker-files % docker-compose logs
 Attaching to docker-files_web_1, docker-files_db_1
-web_1  | /usr/local/bundle/gems/mini_racer-0.3.1/lib/mini_racer.rb:2:in `require': /usr/local/bundle/gems/mini_racer-0.3.1/lib/mini_racer_extension.so: undefined symbol: _ZTTNSt7__cxx1119basic_istringstreamIcSt11char_traitsIcESaIcEEE - /usr/local/bundle/gems/mini_racer-0.3.1/lib/mini_racer_extension.so (LoadError)
-web_1  | 	from /usr/local/bundle/gems/mini_racer-0.3.1/lib/mini_racer.rb:2:in `<top (required)>'
-web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:81:in `require'
-web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:81:in `block (2 levels) in require'
-web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:76:in `each'
-web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:76:in `block in require'
-web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:65:in `each'
-web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:65:in `require'
-web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler.rb:114:in `require'
-web_1  | 	from /app/config/application.rb:7:in `<top (required)>'
-web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:88:in `require'
-web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:88:in `block in server'
-web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:85:in `tap'
-web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:85:in `server'
+web_1  | => Booting Puma
+web_1  | => Rails 5.2.2 application starting in development 
+web_1  | => Run `rails server -h` for more startup options
+web_1  | Exiting
+web_1  | /app/config/initializers/new_framework_defaults.rb:21:in `<top (required)>': undefined method `halt_callback_chains_on_return_false=' for ActiveSupport:Module (NoMethodError)
+web_1  | 	from /usr/local/bundle/gems/activesupport-5.2.2/lib/active_support/dependencies.rb:285:in `load'
+web_1  | 	from /usr/local/bundle/gems/activesupport-5.2.2/lib/active_support/dependencies.rb:285:in `block in load'
+web_1  | 	from /usr/local/bundle/gems/activesupport-5.2.2/lib/active_support/dependencies.rb:257:in `load_dependency'
+web_1  | 	from /usr/local/bundle/gems/activesupport-5.2.2/lib/active_support/dependencies.rb:285:in `load'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/engine.rb:657:in `block in load_config_initializer'
+web_1  | 	from /usr/local/bundle/gems/activesupport-5.2.2/lib/active_support/notifications.rb:170:in `instrument'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/engine.rb:656:in `load_config_initializer'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/engine.rb:614:in `block (2 levels) in <class:Engine>'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/engine.rb:613:in `each'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/engine.rb:613:in `block in <class:Engine>'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/initializable.rb:32:in `instance_exec'
 db_1   | 2020-08-02 02:51:16+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.31-1debian10 started.
 db_1   | 2020-08-02 02:51:16+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
 db_1   | 2020-08-02 02:51:16+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.31-1debian10 started.
@@ -123,6 +119,24 @@ db_1   | 2020-08-02T23:58:35.472886Z 0 [Note] mysqld (mysqld 5.7.31) starting as
 db_1   | 2020-08-02T23:58:35.475116Z 0 [Note] InnoDB: PUNCH HOLE support available
 db_1   | 2020-08-02T23:58:35.475145Z 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
 db_1   | 2020-08-02T23:58:35.475149Z 0 [Note] InnoDB: Uses event mutexes
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/initializable.rb:32:in `run'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/initializable.rb:61:in `block in run_initializers'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:228:in `block in tsort_each'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:350:in `block (2 levels) in each_strongly_connected_component'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:422:in `block (2 levels) in each_strongly_connected_component_from'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:431:in `each_strongly_connected_component_from'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:421:in `block in each_strongly_connected_component_from'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/initializable.rb:50:in `each'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/initializable.rb:50:in `tsort_each_child'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:415:in `call'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:415:in `each_strongly_connected_component_from'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:349:in `block in each_strongly_connected_component'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:347:in `each'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:347:in `call'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:347:in `each_strongly_connected_component'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:226:in `tsort_each'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:205:in `tsort_each'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/initializable.rb:60:in `run_initializers'
 db_1   | 2020-08-02T23:58:35.475152Z 0 [Note] InnoDB: GCC builtin __atomic_thread_fence() is used for memory barrier
 db_1   | 2020-08-02T23:58:35.475153Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
 db_1   | 2020-08-02T23:58:35.475155Z 0 [Note] InnoDB: Using Linux native AIO
@@ -138,53 +152,233 @@ db_1   | 2020-08-02T23:58:35.528291Z 0 [Note] InnoDB: File './ibtmp1' size is no
 db_1   | 2020-08-02T23:58:35.528745Z 0 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
 db_1   | 2020-08-02T23:58:35.528765Z 0 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
 db_1   | 2020-08-02T23:58:35.529056Z 0 [Note] InnoDB: Waiting for purge to start
-web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:49:in `run_command!'
 db_1   | 2020-08-02T23:58:35.579253Z 0 [Note] InnoDB: 5.7.31 started; log sequence number 12578426
-web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands.rb:18:in `<top (required)>'
 db_1   | 2020-08-02T23:58:35.579379Z 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
-web_1  | 	from /app/bin/rails:9:in `require'
 db_1   | 2020-08-02T23:58:35.579819Z 0 [Note] Plugin 'FEDERATED' is disabled.
-web_1  | 	from /app/bin/rails:9:in `<top (required)>'
 db_1   | 2020-08-02T23:58:35.599357Z 0 [Note] Found ca.pem, server-cert.pem and server-key.pem in data directory. Trying to enable SSL support using them.
-web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client/rails.rb:28:in `load'
 db_1   | 2020-08-02T23:58:35.599384Z 0 [Note] Skipping generation of SSL certificates as certificate files are present in data directory.
-web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client/rails.rb:28:in `call'
 db_1   | 2020-08-02T23:58:35.600917Z 0 [Note] InnoDB: Buffer pool(s) load completed at 200802 23:58:35
-web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client/command.rb:7:in `call'
 db_1   | 2020-08-02T23:58:35.601196Z 0 [Warning] CA certificate ca.pem is self signed.
-web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client.rb:30:in `run'
 db_1   | 2020-08-02T23:58:35.601496Z 0 [Note] Skipping generation of RSA key pair as key files are present in data directory.
-web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/bin/spring:49:in `<top (required)>'
 db_1   | 2020-08-02T23:58:35.602441Z 0 [Note] Server hostname (bind-address): '*'; port: 3306
-web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/binstub.rb:31:in `load'
 db_1   | 2020-08-02T23:58:35.602496Z 0 [Note] IPv6 is available.
-web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/binstub.rb:31:in `<top (required)>'
 db_1   | 2020-08-02T23:58:35.602519Z 0 [Note]   - '::' resolves to '::';
-web_1  | 	from /app/bin/spring:15:in `require'
 db_1   | 2020-08-02T23:58:35.602532Z 0 [Note] Server socket created on IP: '::'.
-web_1  | 	from /app/bin/spring:15:in `<top (required)>'
 db_1   | 2020-08-02T23:58:35.603268Z 0 [Warning] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
-web_1  | 	from bin/rails:3:in `load'
 db_1   | 2020-08-02T23:58:35.627805Z 0 [Note] Event Scheduler: Loaded 0 events
-web_1  | 	from bin/rails:3:in `<main>'
 db_1   | 2020-08-02T23:58:35.628060Z 0 [Note] mysqld: ready for connections.
-web_1  | /usr/local/bundle/gems/mini_racer-0.3.1/lib/mini_racer.rb:2:in `require': /usr/local/bundle/gems/mini_racer-0.3.1/lib/mini_racer_extension.so: undefined symbol: _ZTTNSt7__cxx1119basic_istringstreamIcSt11char_traitsIcESaIcEEE - /usr/local/bundle/gems/mini_racer-0.3.1/lib/mini_racer_extension.so (LoadError)
 db_1   | Version: '5.7.31'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server (GPL)
-web_1  | 	from /usr/local/bundle/gems/mini_racer-0.3.1/lib/mini_racer.rb:2:in `<top (required)>'
-web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:81:in `require'
-web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:81:in `block (2 levels) in require'
-web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:76:in `each'
-web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:76:in `block in require'
-web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:65:in `each'
-web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler/runtime.rb:65:in `require'
-web_1  | 	from /usr/local/lib/ruby/site_ruby/2.3.0/bundler.rb:114:in `require'
-web_1  | 	from /app/config/application.rb:7:in `<top (required)>'
-web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:88:in `require'
-web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:88:in `block in server'
-web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:85:in `tap'
-web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:85:in `server'
-web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:49:in `run_command!'
-web_1  | 	from /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/commands.rb:18:in `<top (required)>'
+db_1   | 2020-08-05 06:02:45+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.31-1debian10 started.
+db_1   | 2020-08-05 06:02:46+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+db_1   | 2020-08-05 06:02:46+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.31-1debian10 started.
+db_1   | 2020-08-05T06:02:46.357777Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+db_1   | 2020-08-05T06:02:46.358894Z 0 [Note] mysqld (mysqld 5.7.31) starting as process 1 ...
+db_1   | 2020-08-05T06:02:46.361146Z 0 [Note] InnoDB: PUNCH HOLE support available
+db_1   | 2020-08-05T06:02:46.361173Z 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+db_1   | 2020-08-05T06:02:46.361177Z 0 [Note] InnoDB: Uses event mutexes
+db_1   | 2020-08-05T06:02:46.361179Z 0 [Note] InnoDB: GCC builtin __atomic_thread_fence() is used for memory barrier
+db_1   | 2020-08-05T06:02:46.361181Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+db_1   | 2020-08-05T06:02:46.361183Z 0 [Note] InnoDB: Using Linux native AIO
+db_1   | 2020-08-05T06:02:46.361692Z 0 [Note] InnoDB: Number of pools: 1
+db_1   | 2020-08-05T06:02:46.362813Z 0 [Note] InnoDB: Using CPU crc32 instructions
+db_1   | 2020-08-05T06:02:46.363948Z 0 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+db_1   | 2020-08-05T06:02:46.370183Z 0 [Note] InnoDB: Completed initialization of buffer pool
+db_1   | 2020-08-05T06:02:46.371752Z 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+db_1   | 2020-08-05T06:02:46.385412Z 0 [Note] InnoDB: Highest supported file format is Barracuda.
+db_1   | 2020-08-05T06:02:46.397552Z 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+db_1   | 2020-08-05T06:02:46.397618Z 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+db_1   | 2020-08-05T06:02:46.410348Z 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+db_1   | 2020-08-05T06:02:46.410810Z 0 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
+db_1   | 2020-08-05T06:02:46.410833Z 0 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
+db_1   | 2020-08-05T06:02:46.411120Z 0 [Note] InnoDB: Waiting for purge to start
+db_1   | 2020-08-05T06:02:46.461316Z 0 [Note] InnoDB: 5.7.31 started; log sequence number 12578454
+db_1   | 2020-08-05T06:02:46.461586Z 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+db_1   | 2020-08-05T06:02:46.461930Z 0 [Note] Plugin 'FEDERATED' is disabled.
+db_1   | 2020-08-05T06:02:46.479635Z 0 [Note] Found ca.pem, server-cert.pem and server-key.pem in data directory. Trying to enable SSL support using them.
+db_1   | 2020-08-05T06:02:46.479669Z 0 [Note] Skipping generation of SSL certificates as certificate files are present in data directory.
+db_1   | 2020-08-05T06:02:46.481082Z 0 [Note] InnoDB: Buffer pool(s) load completed at 200805  6:02:46
+db_1   | 2020-08-05T06:02:46.481457Z 0 [Warning] CA certificate ca.pem is self signed.
+db_1   | 2020-08-05T06:02:46.481726Z 0 [Note] Skipping generation of RSA key pair as key files are present in data directory.
+db_1   | 2020-08-05T06:02:46.482732Z 0 [Note] Server hostname (bind-address): '*'; port: 3306
+db_1   | 2020-08-05T06:02:46.482859Z 0 [Note] IPv6 is available.
+db_1   | 2020-08-05T06:02:46.482911Z 0 [Note]   - '::' resolves to '::';
+db_1   | 2020-08-05T06:02:46.482943Z 0 [Note] Server socket created on IP: '::'.
+db_1   | 2020-08-05T06:02:46.484009Z 0 [Warning] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+db_1   | 2020-08-05T06:02:46.509875Z 0 [Note] Event Scheduler: Loaded 0 events
+db_1   | 2020-08-05T06:02:46.510180Z 0 [Note] mysqld: ready for connections.
+db_1   | Version: '5.7.31'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server (GPL)
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/application.rb:361:in `initialize!'
+web_1  | 	from /app/config/environment.rb:5:in `<top (required)>'
+web_1  | 	from config.ru:3:in `require_relative'
+web_1  | 	from config.ru:3:in `block in <main>'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/builder.rb:55:in `instance_eval'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/builder.rb:55:in `initialize'
+web_1  | 	from config.ru:in `new'
+web_1  | 	from config.ru:in `<main>'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/builder.rb:49:in `eval'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/builder.rb:49:in `new_from_string'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/builder.rb:40:in `parse_file'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/server.rb:319:in `build_app_and_options_from_config'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/server.rb:219:in `app'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:27:in `app'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/server.rb:354:in `wrapped_app'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:89:in `log_to_stdout'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:51:in `start'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:147:in `block in perform'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:142:in `tap'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:142:in `perform'
+web_1  | 	from /usr/local/bundle/gems/thor-0.20.3/lib/thor/command.rb:27:in `run'
+web_1  | 	from /usr/local/bundle/gems/thor-0.20.3/lib/thor/invocation.rb:126:in `invoke_command'
+web_1  | 	from /usr/local/bundle/gems/thor-0.20.3/lib/thor.rb:387:in `dispatch'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/command/base.rb:65:in `perform'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/command.rb:46:in `invoke'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands.rb:18:in `<top (required)>'
+web_1  | 	from /app/bin/rails:9:in `require'
+web_1  | 	from /app/bin/rails:9:in `<top (required)>'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client/rails.rb:28:in `load'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client/rails.rb:28:in `call'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client/command.rb:7:in `call'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client.rb:30:in `run'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/bin/spring:49:in `<top (required)>'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/binstub.rb:31:in `load'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/binstub.rb:31:in `<top (required)>'
+web_1  | 	from /app/bin/spring:15:in `require'
+web_1  | 	from /app/bin/spring:15:in `<top (required)>'
+web_1  | 	from bin/rails:3:in `load'
+web_1  | 	from bin/rails:3:in `<main>'
+web_1  | => Booting Puma
+web_1  | => Rails 5.2.2 application starting in development 
+web_1  | => Run `rails server -h` for more startup options
+web_1  | Exiting
+web_1  | /app/config/initializers/new_framework_defaults.rb:21:in `<top (required)>': undefined method `halt_callback_chains_on_return_false=' for ActiveSupport:Module (NoMethodError)
+web_1  | 	from /usr/local/bundle/gems/activesupport-5.2.2/lib/active_support/dependencies.rb:285:in `load'
+web_1  | 	from /usr/local/bundle/gems/activesupport-5.2.2/lib/active_support/dependencies.rb:285:in `block in load'
+web_1  | 	from /usr/local/bundle/gems/activesupport-5.2.2/lib/active_support/dependencies.rb:257:in `load_dependency'
+web_1  | 	from /usr/local/bundle/gems/activesupport-5.2.2/lib/active_support/dependencies.rb:285:in `load'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/engine.rb:657:in `block in load_config_initializer'
+web_1  | 	from /usr/local/bundle/gems/activesupport-5.2.2/lib/active_support/notifications.rb:170:in `instrument'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/engine.rb:656:in `load_config_initializer'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/engine.rb:614:in `block (2 levels) in <class:Engine>'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/engine.rb:613:in `each'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/engine.rb:613:in `block in <class:Engine>'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/initializable.rb:32:in `instance_exec'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/initializable.rb:32:in `run'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/initializable.rb:61:in `block in run_initializers'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:228:in `block in tsort_each'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:350:in `block (2 levels) in each_strongly_connected_component'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:422:in `block (2 levels) in each_strongly_connected_component_from'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:431:in `each_strongly_connected_component_from'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:421:in `block in each_strongly_connected_component_from'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/initializable.rb:50:in `each'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/initializable.rb:50:in `tsort_each_child'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:415:in `call'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:415:in `each_strongly_connected_component_from'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:349:in `block in each_strongly_connected_component'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:347:in `each'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:347:in `call'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:347:in `each_strongly_connected_component'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:226:in `tsort_each'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:205:in `tsort_each'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/initializable.rb:60:in `run_initializers'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/application.rb:361:in `initialize!'
+web_1  | 	from /app/config/environment.rb:5:in `<top (required)>'
+web_1  | 	from config.ru:3:in `require_relative'
+web_1  | 	from config.ru:3:in `block in <main>'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/builder.rb:55:in `instance_eval'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/builder.rb:55:in `initialize'
+web_1  | 	from config.ru:in `new'
+web_1  | 	from config.ru:in `<main>'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/builder.rb:49:in `eval'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/builder.rb:49:in `new_from_string'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/builder.rb:40:in `parse_file'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/server.rb:319:in `build_app_and_options_from_config'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/server.rb:219:in `app'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:27:in `app'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/server.rb:354:in `wrapped_app'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:89:in `log_to_stdout'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:51:in `start'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:147:in `block in perform'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:142:in `tap'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:142:in `perform'
+web_1  | 	from /usr/local/bundle/gems/thor-0.20.3/lib/thor/command.rb:27:in `run'
+web_1  | 	from /usr/local/bundle/gems/thor-0.20.3/lib/thor/invocation.rb:126:in `invoke_command'
+web_1  | 	from /usr/local/bundle/gems/thor-0.20.3/lib/thor.rb:387:in `dispatch'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/command/base.rb:65:in `perform'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/command.rb:46:in `invoke'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands.rb:18:in `<top (required)>'
+web_1  | 	from /app/bin/rails:9:in `require'
+web_1  | 	from /app/bin/rails:9:in `<top (required)>'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client/rails.rb:28:in `load'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client/rails.rb:28:in `call'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client/command.rb:7:in `call'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client.rb:30:in `run'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/bin/spring:49:in `<top (required)>'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/binstub.rb:31:in `load'
+web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/binstub.rb:31:in `<top (required)>'
+web_1  | 	from /app/bin/spring:15:in `require'
+web_1  | 	from /app/bin/spring:15:in `<top (required)>'
+web_1  | 	from bin/rails:3:in `load'
+web_1  | 	from bin/rails:3:in `<main>'
+web_1  | => Booting Puma
+web_1  | => Rails 5.2.2 application starting in development 
+web_1  | => Run `rails server -h` for more startup options
+web_1  | Exiting
+web_1  | /app/config/initializers/new_framework_defaults.rb:21:in `<top (required)>': undefined method `halt_callback_chains_on_return_false=' for ActiveSupport:Module (NoMethodError)
+web_1  | 	from /usr/local/bundle/gems/activesupport-5.2.2/lib/active_support/dependencies.rb:285:in `load'
+web_1  | 	from /usr/local/bundle/gems/activesupport-5.2.2/lib/active_support/dependencies.rb:285:in `block in load'
+web_1  | 	from /usr/local/bundle/gems/activesupport-5.2.2/lib/active_support/dependencies.rb:257:in `load_dependency'
+web_1  | 	from /usr/local/bundle/gems/activesupport-5.2.2/lib/active_support/dependencies.rb:285:in `load'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/engine.rb:657:in `block in load_config_initializer'
+web_1  | 	from /usr/local/bundle/gems/activesupport-5.2.2/lib/active_support/notifications.rb:170:in `instrument'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/engine.rb:656:in `load_config_initializer'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/engine.rb:614:in `block (2 levels) in <class:Engine>'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/engine.rb:613:in `each'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/engine.rb:613:in `block in <class:Engine>'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/initializable.rb:32:in `instance_exec'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/initializable.rb:32:in `run'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/initializable.rb:61:in `block in run_initializers'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:228:in `block in tsort_each'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:350:in `block (2 levels) in each_strongly_connected_component'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:422:in `block (2 levels) in each_strongly_connected_component_from'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:431:in `each_strongly_connected_component_from'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:421:in `block in each_strongly_connected_component_from'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/initializable.rb:50:in `each'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/initializable.rb:50:in `tsort_each_child'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:415:in `call'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:415:in `each_strongly_connected_component_from'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:349:in `block in each_strongly_connected_component'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:347:in `each'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:347:in `call'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:347:in `each_strongly_connected_component'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:226:in `tsort_each'
+web_1  | 	from /usr/local/lib/ruby/2.4.0/tsort.rb:205:in `tsort_each'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/initializable.rb:60:in `run_initializers'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/application.rb:361:in `initialize!'
+web_1  | 	from /app/config/environment.rb:5:in `<top (required)>'
+web_1  | 	from config.ru:3:in `require_relative'
+web_1  | 	from config.ru:3:in `block in <main>'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/builder.rb:55:in `instance_eval'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/builder.rb:55:in `initialize'
+web_1  | 	from config.ru:in `new'
+web_1  | 	from config.ru:in `<main>'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/builder.rb:49:in `eval'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/builder.rb:49:in `new_from_string'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/builder.rb:40:in `parse_file'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/server.rb:319:in `build_app_and_options_from_config'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/server.rb:219:in `app'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:27:in `app'
+web_1  | 	from /usr/local/bundle/gems/rack-2.0.6/lib/rack/server.rb:354:in `wrapped_app'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:89:in `log_to_stdout'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:51:in `start'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:147:in `block in perform'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:142:in `tap'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:142:in `perform'
+web_1  | 	from /usr/local/bundle/gems/thor-0.20.3/lib/thor/command.rb:27:in `run'
+web_1  | 	from /usr/local/bundle/gems/thor-0.20.3/lib/thor/invocation.rb:126:in `invoke_command'
+web_1  | 	from /usr/local/bundle/gems/thor-0.20.3/lib/thor.rb:387:in `dispatch'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/command/base.rb:65:in `perform'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/command.rb:46:in `invoke'
+web_1  | 	from /usr/local/bundle/gems/railties-5.2.2/lib/rails/commands.rb:18:in `<top (required)>'
 web_1  | 	from /app/bin/rails:9:in `require'
 web_1  | 	from /app/bin/rails:9:in `<top (required)>'
 web_1  | 	from /usr/local/bundle/gems/spring-2.0.2/lib/spring/client/rails.rb:28:in `load'
